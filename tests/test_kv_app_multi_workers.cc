@@ -42,7 +42,7 @@ void RunWorker(int customer_id) {
 
   float res = 0;
   for (int i = 0; i < num; ++i) {
-    res += fabs(rets[i] - vals[i] * repeat);
+    res += labs(rets[i] - vals[i] * repeat);
   }
   CHECK_LT(res / repeat, 1e-5);
   LL << "error: " << res / repeat;
